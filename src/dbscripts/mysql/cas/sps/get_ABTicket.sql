@@ -1,0 +1,9 @@
+DROP PROCEDURE IF EXISTS `cas`.`get_ABTicket`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_ABTicket`( )
+    NO SQL
+BEGIN SELECT SUBSTRING( MD5( RAND( ) ) 
+FROM 1 
+FOR 20 ) AS ab_ticket;
+END$$
+DELIMITER ;

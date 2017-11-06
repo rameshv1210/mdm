@@ -1,0 +1,11 @@
+DROP PROCEDURE IF EXISTS `mdm_device`.`raiseError`;
+DELIMITER $$
+CREATE PROCEDURE `raiseError`(`errno` BIGINT UNSIGNED, `message` VARCHAR(256))
+BEGIN
+SIGNAL SQLSTATE
+    'ERR0R'
+SET
+    MESSAGE_TEXT = `message`,
+    MYSQL_ERRNO = `errno`;
+END$$
+DELIMITER ;

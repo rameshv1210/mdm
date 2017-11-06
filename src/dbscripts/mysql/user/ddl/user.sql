@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS `user`.`user`;
+CREATE TABLE `user`.`user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `password` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `PasswordSalt` varchar(100) NOT NULL,
+  `FailedPasswordAttemptCount` int(2) DEFAULT '0',
+  `LockoutDate` datetime DEFAULT NULL,
+  `LastLockOutDate` datetime DEFAULT NULL,
+  `created` timestamp NULL DEFAULT NULL,
+  `mobile_number` varchar(16) DEFAULT NULL,
+  `one_time_pin` varchar(12) DEFAULT NULL,
+  `password_question` varchar(250) DEFAULT NULL,
+  `password_answer` varchar(250) DEFAULT NULL,
+  `last_login_date` datetime DEFAULT NULL,
+  `last_password_changed_date` datetime DEFAULT NULL,
+  `failed_password_answer_attempt_count` int(2) DEFAULT '0',
+  `company_guid` char(36) DEFAULT NULL,
+  `groupId` char(36) DEFAULT NULL,
+  `account_status` tinyint(1) DEFAULT '1',
+  `user_type` varchar(50) DEFAULT NULL,
+  `publicKey` text,
+  `privateKey` text,
+  `keyPassword` varchar(50) DEFAULT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
